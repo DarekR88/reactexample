@@ -5,7 +5,7 @@ import './SecondScreen.css'
 const secondScreen = props => {
 
     return (
-        <div className="secondScreen">
+        <div className="secondScreen" ref={props.secondRef}>
             <p className="content">Second Screen</p>
         </div>
     );

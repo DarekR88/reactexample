@@ -4,7 +4,7 @@ import './ThirdScreen.css'
 
 const ThirdScreen = props => {
     return (
-        <div className="thirdScreen">
+        <div className="thirdScreen" ref={props.thirdRef}>
             <p className="content">Third Screen</p>
         </div>
     );
