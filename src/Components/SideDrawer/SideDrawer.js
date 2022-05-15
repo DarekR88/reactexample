@@ -10,8 +10,8 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
         <button className="sideDrawerCloseButton" onClick={props.drawerClickHandler}>x</button>
         <ul>
-            <li><a href="/">Products</a></li>
-            <li><a href="/">About</a></li>
+            <li><Link to='/#about'>About</Link></li>
+            <li><Link to='/#misc'>Misc</Link></li>
         </ul>
     </nav>
     );

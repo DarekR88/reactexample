@@ -15,6 +15,14 @@ const App = () => {
   const secondRef = useRef(null);
   const thirdRef = useRef(null);
 
+  const handleScroll = (ref) => {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   const toggleDrawer = () => {
     setIsSideDrawerOpen(!isSideDrawerOpen);
   };
