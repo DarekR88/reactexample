@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Toolbar from './Components/Toolbar/Toolbar'
 import SideDrawer from './Components/SideDrawer/SideDrawer'
 import Backdrop from './Components/Backdrop/Backdrop';
@@ -40,21 +40,12 @@ const App = () => {
 
   return (
     <div style = {{ height: '100%'}} >
-      <Toolbar drawerClickHandler={toggleDrawer} landingRef={landingRef} secondRef={secondRef} thirdRef={thirdRef} />
-      <SideDrawer show={isSideDrawerOpen} drawerClickHandler={toggleDrawer} landingRef={landingRef} secondRef={secondRef} thirdRef={thirdRef} />
+      <Toolbar drawerClickHandler={toggleDrawer} handleScroll={handleScroll} landingRef={landingRef} secondRef={secondRef} thirdRef={thirdRef} />
+      <SideDrawer show={isSideDrawerOpen} drawerClickHandler={toggleDrawer} handleScroll={handleScroll} landingRef={landingRef} secondRef={secondRef} thirdRef={thirdRef} />
       {backdrop}
-      <Router>
-        <Routes>
-          <Route exact path={['/', '/#about', '/#misc']}>
             <LandingScreen landingRef={landingRef} />
             <SecondScreen secondRef={secondRef} />
-            <ThirdScreen thirdRef={thirdRef} />
-          </Route>
-        </Routes>
-      </Router> 
-    
-
-      
+            <ThirdScreen thirdRef={thirdRef} /> 
     </div >
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+// import { Link } from "react-router-dom"
 import './SideDrawer.css';
 
 const sideDrawer = props => {
@@ -10,8 +11,18 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
         <button className="sideDrawerCloseButton" onClick={props.drawerClickHandler}>x</button>
         <ul>
-            <li><Link to='/#about'>About</Link></li>
-            <li><Link to='/#misc'>Misc</Link></li>
+            <li><p onClick={() => {
+                props.drawerClickHandler();
+                props.handleScroll((props.landingRef).current);
+            }}>Home</p></li>
+            <li><p onClick={() => {
+                props.drawerClickHandler();
+                props.handleScroll((props.secondRef).current);
+            }}>About</p></li>
+            <li><p onClick={() => {
+                props.drawerClickHandler();
+                props.handleScroll((props.thirdRef).current);
+            }}>Misc</p></li>
         </ul>
     </nav>
     );
